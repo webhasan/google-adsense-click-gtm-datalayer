@@ -7,7 +7,7 @@
 
 (function() {
     var isAdsArea = false;
-    var add_link = '';
+    var ad_link = '';
     var page_link = window.location.href;
 
     document.addEventListener('mouseover', function (e) {
@@ -16,14 +16,14 @@
 
         if(target) {
             isAdsArea = true;
-            ads_link = target.getAttribute('src');
+            ad_link = target.getAttribute('src');
         }else if(target2) {
             isAdsArea = true;
-            ads_link = target2.getAttribute('src'); 
+            ad_link = target2.getAttribute('src'); 
         }
         else {
             isAdsArea = false;
-            ads_link = '';
+            ad_link = '';
         }
     });
 
@@ -31,9 +31,9 @@
         if(isAdsArea) {
             window.dataLayer = window.dataLayer || [];
             dataLayer.push({
-                'event': 'adsense_ads_click',
-                'ads_link': ads_link,
-                'ads_location': page_link
+                'event': 'adsense_ad_click',
+                'ad_link': ad_link,
+                'ad_location': page_link
             })
         }
     });
