@@ -1,3 +1,10 @@
+/**
+* Author: Md Hasanuzzaman
+* Email: webhasan24@gmail.com
+* Linkedin: https://linkedin.com/md-h
+* Version: 1.0.0
+*/
+
 (function() {
     var isAdsArea = false;
     var add_link = '';
@@ -9,14 +16,14 @@
 
         if(target) {
             isAdsArea = true;
-            add_link = target.getAttribute('src');
+            ads_link = target.getAttribute('src');
         }else if(target2) {
             isAdsArea = true;
-            add_link = target2.getAttribute('src'); 
+            ads_link = target2.getAttribute('src'); 
         }
         else {
             isAdsArea = false;
-            add_link = '';
+            ads_link = '';
         }
     });
 
@@ -24,9 +31,9 @@
         if(isAdsArea) {
             window.dataLayer = window.dataLayer || [];
             dataLayer.push({
-                'event': 'ads_click',
-                'add_link': add_link,
-                'page_link': page_link
+                'event': 'adsense_ads_click',
+                'ads_link': ads_link,
+                'ads_location': page_link
             })
         }
     });
